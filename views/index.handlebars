@@ -1,33 +1,103 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+<!-- floating action button for social media -->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">facebook</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">twitter</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">instagram</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">skype</i></a></li>
+  </ul>
+</div>
+​
+<!-- slider container -->
+<div class="container" id="imgSlider">
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="http://lorempixel.com/output/nature-q-c-250-250-1.jpg" alt="">
+        <div class="caption center-align">
+          <h3>SiblingSupportProject</h3>
+          <h4 class="light grey-text text-lighten-3">Our Brothers</h4>
+          <h4 class="light grey-text text-lighten-3">Our Sisters</h4>
+          <h4 class="light grey-text text-lighten-3">Ourselves...</h4>
+          ​
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/output/nature-q-c-250-250-2.jpg" alt="">
+        <div class="caption right-align">
+          <h3>SiblingSupportProject</h3>
+        </div>
+      </li>
+      <li>
+        <img src="http://lorempixel.com/output/nature-q-c-250-250-3.jpg" alt="">
+        <div class="caption left-align">
+          <h3>SiblingSupportProject</h3>
+        </div>
+      </li>
+    </ul>
+  </div>
+  ​
+  <div id="aboutMe">
+    <h2 class="text-center">About Us</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita et doloremque eveniet
+      accusantium ullam assumenda, debitis fugiat non, quis molestiae voluptatum quibusdam exercitationem
+      veritatis porro ipsa fugit, dolores nobis provident. Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Enim, voluptates magni tempore deserunt cupiditate magnam autem ducimus libero explicabo voluptas
+      ex suscipit non reprehenderit doloribus praesentium repudiandae, facilis nam sequi!. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Accusantium dolore nisi eligendi consequuntur facere nostrum et
+      provident ea quisquam eveniet magnam nobis incidunt, recusandae laboriosam fuga, quod veniam quis
+      placeat.</p>
   </div>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+​
+<div class="container">
+  <hr>
+  <div class="row">
+    <div class="col s6">
+      <img src="https://via.placeholder.com/100" class="responsive-img circle" alt="female">
+    </div>
+    <div class="col s6">
+      <img src="https://via.placeholder.com/100" class="responsive-img circle" alt="male">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quia reprehenderit maxime expedita quo
+        modi aut aliquam vero incidunt repellendus perferendis nisi similique culpa asperiores veniam,
+        officiis ducimus! Magni, debitis!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Dolore neque, mollitia laborum nihil hic harum repellat natus quam unde. Amet, aliquam quis! Velit,
+        molestias. Ea beatae vel ipsum expedita sapiente?</p>
+    </div>
+    <div class="col s6">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quia reprehenderit maxime expedita quo
+        modi aut aliquam vero incidunt repellendus perferendis nisi similique culpa asperiores veniam,
+        officiis ducimus! Magni, debitis!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Dolore neque, mollitia laborum nihil hic harum repellat natus quam unde. Amet, aliquam quis! Velit,
+        molestias. Ea beatae vel ipsum expedita sapiente?</p>
+    </div>
+  </div>
+  <hr>
+</div>
+​
+<!-- Video embedding -->
+<div class="container" id="video">
+  <div class="video-container">
+    <iframe width="350" height="215" src="https://www.youtube.com/embed/0WhJpj4d5WQ" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<hr>
+​
+<div class="container" id="social">
+  <h1 class="title">Join/Support Us Today</h1>
+  <button class="btn waves-effect waves-light">Join</button>
+  <button class="btn red darken-3 white-text">Support our patreon</button>
+  <!-- <a class="waves-effect waves-light btn">Join</a>
+        <a class="waves-effect waves-light btn">Support our patreon</a> -->
+</div>
+​
+​
+​
