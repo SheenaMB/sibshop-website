@@ -7,7 +7,7 @@ module.exports = function(app) {
 
 
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    Library.findAll({}).then(function(Library) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
