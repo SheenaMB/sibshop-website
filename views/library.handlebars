@@ -1,15 +1,21 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <select class="custom-select" id="category">
-                    <option selected value="">All Categories</option>
-                    <option value="Books">Books:</option>
-                    <option value="Article">Article:</option>
-                    <option value="Adult">Adult Readers:</option>
-                    <option value="Young">Young Readers:</option>
-                </select>
-            </div>
-        </div>
-    </div>
-</div>
+<table class="responsive">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each libraries}}
+        <tr>
+            <td>{{this.}}</td>
+           <td>{{this.}}</td>
+            <td>{{this.}}</td>
+            <td>{{this.}}</td>
+        </tr>
+    </tbody>
+</table>
+
