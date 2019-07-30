@@ -4,14 +4,9 @@ module.exports = function(app) {
   // Load index page
 
 
-
-
   app.get("/", function(req, res) {
-    Library.findAll({}).then(function(Library) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    db.Library.findAll({}).then(function(dbLibrary) {
+      res.render("index");
     });
   });
 
