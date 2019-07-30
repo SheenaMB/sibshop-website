@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "keiko123",
-    "database": "exampledb",
+    "password": "midori14",
+    "database": "sibsdb",
     "host": "localhost",
     "dialect": "mysql"
   },
