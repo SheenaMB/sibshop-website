@@ -1,7 +1,18 @@
-<div class="container">
+<h1>Libraries</h1>
+<ul>
+    {{#each resources}}
+        <li>{{title}}</li>
+        <li>{{author}}</li>
+        <li>{{url}}</li>
+        <li>{{category}}</li>
+        {{/each}}
+</ul>
+
+{{!-- <div class="container">
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
+                <h1></h1>
                 <select class="custom-select" id="category">
                     <option selected value="">All Categories</option>
                     <option value="Books">Books:</option>
@@ -12,4 +23,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

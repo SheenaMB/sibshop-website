@@ -5,7 +5,6 @@ module.exports = function(app) {
   app.get("/api/library", function(req, res) {
     db.Library.findAll({}).then(function(dbResources) {
       res.json(dbResources);
-//      res.sendFile(path.join(__dirname, "../views/library.handlebars"));
     });
   });
 
@@ -22,8 +21,46 @@ module.exports = function(app) {
       res.json(dbResources);
     });
   });
-};
 
+// GET all community posts
+app.get("api/community", function(req, res){
+  db.Community.findAll({}).then(function(response){
+    res.json(response);
+  })
+});
+
+// Create a new post 
+app.post("api/community", function(req, res){
+  db.Community.create(req.body).then(function(response){
+    res.json(response);
+  })
+});
+
+// Update a new post 
+app.put("api/community", function(req, res){
+  db.Community.update(req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(function(dbCommunity) {
+      res.json(dbCommunity);
+})
+});
+
+// Delete 
+app.delete("api/community/:id", function(req, res){
+  db.Community.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(function(dbCommunity) {
+      res.json(dbCommunity);
+    });
+});
+}
 
 // workshop --> train date, summary, category
 // community --> create blog, delete, update, get

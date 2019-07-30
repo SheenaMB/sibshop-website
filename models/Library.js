@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     url: DataTypes.TEXT,
-    category: DataTypes.INTEGER
+    category: DataTypes.STRING
   });
   return Library;
 };
