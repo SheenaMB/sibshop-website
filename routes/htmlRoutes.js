@@ -7,10 +7,10 @@ module.exports = function(app) {
 
 
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Library.findAll({}).then(function(dbResorces) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        resorces: dbResorces
       });
     });
   });

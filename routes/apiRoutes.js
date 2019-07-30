@@ -5,6 +5,7 @@ module.exports = function(app) {
   app.get("/api/library", function(req, res) {
     db.Library.findAll({}).then(function(dbResources) {
       res.json(dbResources);
+//      res.sendFile(path.join(__dirname, "../views/library.handlebars"));
     });
   });
 
@@ -22,3 +23,8 @@ module.exports = function(app) {
     });
   });
 };
+
+
+// workshop --> train date, summary, category
+// community --> create blog, delete, update, get
+// (authenticared user) --> find all, findone, create, delete, update 
