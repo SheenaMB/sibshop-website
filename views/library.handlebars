@@ -1,15 +1,33 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <select class="custom-select" id="category">
-                    <option selected value="">All Categories</option>
-                    <option value="Books">Books:</option>
-                    <option value="Article">Article:</option>
-                    <option value="Adult">Adult Readers:</option>
-                    <option value="Young">Young Readers:</option>
-                </select>
+ <div class="container">
+        <form>
+            <div class="input-field" id="floating-panel">
+                <input id="book" type="text" placeholder="Enter a Title, Author">
+                <label class="active" for="book"></label>
+                <input id="submit" class="btn waves-effect #ffab40" type="button" value="Search">
             </div>
-        </div>
+        </form>
     </div>
-</div>
+
+
+<table class="responsive">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Link</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each libraries}}
+        <tr>
+            <td>{{this.title}}</td>
+           <td>{{this.author}}</td>
+            <td>{{this.url}}</td>
+            <td>{{this.category}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+

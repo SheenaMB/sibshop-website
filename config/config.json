@@ -1,8 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "midori14",
+
+    "password": "Alwaysforward18",
     "database": "sibsdb",
+
     "host": "localhost",
     "dialect": "mysql"
   },
