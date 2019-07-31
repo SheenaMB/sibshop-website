@@ -3,7 +3,9 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     url: DataTypes.TEXT,
-    category: DataTypes.STRING
-  });
+    category: DataTypes.INTEGER
+  },
+  {freezeTableName: true}
+  );
   return Library;
 };

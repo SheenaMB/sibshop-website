@@ -2,10 +2,16 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all library 
-  app.get("/api/library", function(req, res) {
-    db.Library.findAll({}).then(function(dbResources) {
+  app.get("/api/library/:category", function(req, res) {
+    db.Library.findAll({
+      where: {
+        category: req.params.category
+      }
+    }).then(function(dbResources) {
+      console.log("dbRes", dbResources);
       res.json(dbResources);
     });
+
   });
 
   // Create a new library
@@ -14,7 +20,7 @@ module.exports = function(app) {
       title: DataTypes.STRING,
       author: DataTypes.STRING,
       url: DataTypes.TEXT,
-      category: DataTypes.STRING
+      category: DataTypes.INTEGER
     }).then(function(dbResources) {
       res.json(dbResources);
     });
@@ -76,6 +82,9 @@ app.delete("api/community/:id", function(req, res){
 }
 
 // library --> get, input library, 
-// workshop --> train date, summary, category
-// community --> create blog, delete, update, get
+// workshop --> training date, summary, category
+// trainign and actual workshop (children and adult)
+// community --> list of who lives where, (name email age states disability conditions) 
 // (authenticared user) --> find all, findone, create, delete, update 
+
+// database : library, contact, events 
