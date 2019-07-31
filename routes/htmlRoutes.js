@@ -3,10 +3,18 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
 
+  app.get("/", function(req, res){
+    res.render("index");
+  })
 
-  app.get("/", function(req, res) {
-    db.Library.findAll({}).then(function(dbLibrary) {
-      res.render("index");
+  app.get("/library", function(req, res) {
+    db.Library.findAll({}).then(function(dbResources) {
+      console.log("resources: ", dbResources);
+      res.render("library", {
+        msg: "Welcome!",
+        resources: dbResources
+      });
+
     });
   });
 
