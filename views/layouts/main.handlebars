@@ -14,14 +14,20 @@
 <nav>
   <div class="nav-wrapper purple">
     <a href="" class="brand-logo right">SiblingSupportProject</a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-
+    {{!-- <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> --}}
+    <ul >
       <li><a href="/">Home</a></li>
       <li><a href="/workshop">Workshop</a></li>
       <li><a href="/library">Library</a></li>
-      <li><a href="/community">Community</a></li>
-
+      <li><a href="/community">Communtity</a></li>
     </ul>
+    {{!-- <ul id="mobile-demo" class="side-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/workshop">Workshop</a></li>
+      <li><a href="/library">Library</a></li>
+      <li><a href="/community">Communtity</a></li>
+    </ul> --}}
+
   </div>
 </nav>
 
@@ -42,6 +48,9 @@
 
     $('.fixed-action-btn').floatingActionButton();
 
+    $('select').formSelect();
+       
+    $('.sidenav').sidenav();
 
 
   })
