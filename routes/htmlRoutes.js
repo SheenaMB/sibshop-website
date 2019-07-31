@@ -15,22 +15,18 @@ module.exports = function(app) {
     // db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       console.log('community')
       res.render("community", {
-        example: ''
-      // });
     });
   });
 
   app.get("/workshop", function(req, res) {
     console.log("community")
     res.render("workshop", {
-      example: ''
     });
   });
 
   app.get("/library", function(req, res) {
     console.log("library")
     res.render("library", {
-      example: ''
     });
   });
 
