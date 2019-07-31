@@ -3,6 +3,7 @@
     "username": "root",
     "password": "asdfasdf",
     "database": "sibsdb",
+
     "host": "localhost",
     "dialect": "mysql"
   },

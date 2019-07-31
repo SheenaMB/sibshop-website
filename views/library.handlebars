@@ -13,3 +13,27 @@
         </div>
     </div>
 </div>
+
+
+<table class="responsive">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Link</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each libraries}}
+        <tr>
+            <td>{{this.title}}</td>
+           <td>{{this.author}}</td>
+            <td>{{this.url}}</td>
+            <td>{{this.category}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
