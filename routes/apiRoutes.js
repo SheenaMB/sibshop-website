@@ -10,12 +10,17 @@ module.exports = function(app) {
 
   // Create a new library
   app.post("/api/library", function(req, res) {
-    db.Library.create(req.body).then(function(dbResources) {
+    db.Library.create({
+      title: DataTypes.STRING,
+      author: DataTypes.STRING,
+      url: DataTypes.TEXT,
+      category: DataTypes.STRING
+    }).then(function(dbResources) {
       res.json(dbResources);
     });
   });
 
-  // Delete an library by id
+  // Delete a library by id
   app.delete("/api/library/:id", function(req, res) {
     db.Library.destroy({ where: { id: req.params.id } }).then(function(dbResources) {
       res.json(dbResources);
@@ -49,7 +54,7 @@ app.put("api/community", function(req, res){
 })
 });
 
-// Delete 
+// Delete a post
 app.delete("api/community/:id", function(req, res){
   db.Community.destroy({
     where: {
@@ -60,8 +65,17 @@ app.delete("api/community/:id", function(req, res){
       res.json(dbCommunity);
     });
 });
+
+
+
+
+
+
+
+
 }
 
+// library --> get, input library, 
 // workshop --> train date, summary, category
 // community --> create blog, delete, update, get
 // (authenticared user) --> find all, findone, create, delete, update 
