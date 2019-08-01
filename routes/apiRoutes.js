@@ -53,9 +53,12 @@ module.exports = function (app) {
   });
 
   // Delete a library by id
-  app.delete("/api/library/:id", function (req, res) {
+  app.delete("/api/library/delete/:id", function (req, res) {
+    console.log("dde")
     db.Library.destroy({ where: { id: req.params.id } }).then(function (response) {
-      res.json(response);
+      res.status(response);
+      console.log(response);
+      // res.json(response);
     });
   });
 

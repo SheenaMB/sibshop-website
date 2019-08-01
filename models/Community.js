@@ -13,16 +13,4 @@ module.exports = function (sequelize, DataTypes) {
   return User;
 };
 
-// db.sequelize.sync({ force: true })
-//   .then(function(){
-//     SignUp.create({
-//       firstName: "Sheena",
-//       lastName: "Brevig",
-//       email: "sheena.brevig@gmail.com",
-//        location: "Los Angeles, CA"
-//     }).then (function(newUser) {
-//       return newUser;
-      
-//   })
-// })
 

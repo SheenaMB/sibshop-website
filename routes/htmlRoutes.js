@@ -16,28 +16,13 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/workshop", function(req, res) {
-  //   console.log("community")
-  //   res.render("workshop", {
-  //   });
-  // });
-  // app.get("/library", function(req, res) {
-  //   console.log("library");
-  //   db.Library.findAll({}).then(function(response) {
-  //     console.log("resources: ", response);
-  //     // res.render("library", {
-  //     // });
-
-  //   });
-  // });
-
   app.get("/library", function(req, res) {
     console.log("library");
     db.Library.findAll({})
     .then(function(data){
       // console.log("==========   ", data);
-      
-      res.render("library", {libraries: data});
+      console.log(data);
+      res.render("library", {data});
     })
      
   });
