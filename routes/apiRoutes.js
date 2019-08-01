@@ -3,12 +3,12 @@ var db = require("../models");
 /*
 
 TODO:
-1. Delete item by id at "/api/library/:id" - 
 
 COMPLETE:
 1. Get all library info - defined & working (see htmlRoutes.js file) "/library"
 2. Get all library info based on category number - define and working "/api/library/:category"
 
+3. Delete item by id at "/api/library/:id" - 
 */
 
 module.exports = function (app) {
