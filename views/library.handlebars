@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4"
             <div class="input-field ">
-                <select id="category">
+                <select id="categoryMenu" onfocus="this.selectedIndex = -1;" onchange='getCategories(event)'>
                     <option selected value="">All Categories</option>
 
                     <option value="1">Books</option>
@@ -28,8 +28,7 @@
     </thead>
 
     <tbody >
-
-        {{#each Library}}
+        {{#each data}}
         <tr>
             <td>{{this.title}}</td>
             <td>{{this.author}}</td>
@@ -39,3 +38,18 @@
         {{/each}}
     </tbody>
 </table>
+
+<script>
+    var getCategories = function(event)  {
+        var dropdown = document.getElementById("categoryMenu"); 
+        var selectedOptionValue = dropdown.options[dropdown.selectedIndex].value;
+        //
+        // find value for category
+        //
+        fetch(`/api/library/${selectedOptionValue}`).then((response) => {
+            response.json().then(data => {
+                console.log(JSON.stringify(data,null,2));
+            })
+        });
+    }
+    </script>
