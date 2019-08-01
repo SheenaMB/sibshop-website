@@ -3,14 +3,14 @@
 
 module.exports = function (sequelize, DataTypes) {
   // console.log("sequelize???00-----", sequelize);
-  var SignUp = sequelize.define("SignUp", {
+  var User = sequelize.define("User", {
     name: DataTypes.STRING,
     email: DataTypes.TEXT,
     location: DataTypes.STRING
   },
     { freezeTableName: true }
   );
-  return SignUp;
+  return User;
 };
 
 // db.sequelize.sync({ force: true })
