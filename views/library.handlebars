@@ -1,13 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
+
             <div class="input-field ">
                 <select id="category">
                     <option selected value="">All Categories</option>
-                    <option value="1">Books:</option>
-                    <option value="2">Article:</option>
-                    <option value="3">Adult Readers:</option>
-                    <option value="4">Young Readers:</option>
+
+                    <option value="1">Books</option>
+                    <option value="2">Article</option>
+                    <option value="3">Adult Readers</option>
+                    <option value="4">Young Readers</option>
+
                 </select>
             </div>
         </div>
@@ -15,7 +18,7 @@
 </div>
 
 
-<table class="responsive">
+<table class="responsive" id="library-table">
     <thead>
         <tr>
             <th>Title</th>
@@ -25,8 +28,8 @@
         </tr>
     </thead>
 
-    <tbody>
-        {{#each libraries}}
+    <tbody >
+        {{#each Library}}
         <tr>
             <td>{{this.title}}</td>
             <td>{{this.author}}</td>
