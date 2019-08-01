@@ -1,4 +1,6 @@
-let seedInfo = ``
+
+let seedInfo = 
+
     [
         // Alabama
         {
@@ -21,7 +23,9 @@ let seedInfo = ``
             Title: "California Sibling Leadership Network",
             Location: "California",
             image: "https://siblingleadership.org/wp-content/uploads/2011/01/CASLN-California-chapter-e1395427935861-910x1024.jpg",
+
             info: "CaliforniaSibs (The California Sibling Leadership Network) is rapidly growing to Inform, Support and Advocate with California Sibs. Our immediate focus is on providing meet-ups for adult Sibs, speaking at events for both families and the service provider community, and building a guide to the complex services available for our siblings in California. Come join us, or stay in touch via our website or social media links below.",
+
             contact: " Julie Neward (Northern California) or Jaqueline Moreno (Southern California), Info@CaliforniaSibs.org"
         },
         // Colorado
@@ -218,4 +222,5 @@ let seedInfo = ``
         }
     ]
 
-    module.export = seedInfo;
+    module.exports = seedInfo;
+
