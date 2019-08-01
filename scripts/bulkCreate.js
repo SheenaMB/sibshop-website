@@ -2,7 +2,7 @@ var seedData = require("./seeds");
 var express = require("express");
 var sequelize = require("sequelize");
 var Library = require("../models/Library");
-var Community = require("../models/Community");
+// var Community = require("../models/Community");
 var db = require("../models");
 
 

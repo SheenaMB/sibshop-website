@@ -23,19 +23,24 @@ module.exports = function(app) {
     // db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       console.log('community')
       res.render("community", {
+        
     });
   });
 
-  app.get("/workshop", function(req, res) {
-    console.log("community")
-    res.render("workshop", {
-    });
-  });
+  // app.get("/workshop", function(req, res) {
+  //   console.log("community")
+  //   res.render("workshop", {
+  //   });
+  // });
 
   app.get("/library", function(req, res) {
     console.log("library")
-    res.render("library", {
-    });
+    db.Library.findAll({}).then(function(data){
+      console.log("==========   ", data);
+      
+      res.render("library", {libraries: data});
+    })
+     
   });
 
   // Render 404 page for any unmatched routes
