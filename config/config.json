@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
+
     "password": "asdfasdf",
+
     "database": "sibsdb",
 
     "host": "localhost",
