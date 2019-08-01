@@ -11,8 +11,6 @@ module.exports = function(app) {
     db.Library.findAll({}).then(function(dbResources) {
       console.log("resources: ", dbResources);
       res.render("library", {
-        msg: "Welcome!",
-        resources: dbResources
       });
 
     });
@@ -22,7 +20,7 @@ module.exports = function(app) {
   app.get("/community", function(req, res) {
     // db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       console.log('community')
-      res.render("community", {
+      res.render("community", {libraries: data
         
     });
   });

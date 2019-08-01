@@ -83,7 +83,7 @@ app.get("/api/community/signup/:id", function(req, res) {
     where: {
       id: req.params.id
     }
-  }).then(function(dbSignUp) {
+  }).then(function(response) {
     console.log("dbSignup", response);
     res.json(response);
   });
