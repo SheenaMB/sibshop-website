@@ -1,15 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-<<<<<<< HEAD
-            <div class="form-group">
-                <select class="custom-select" id="category">
-                    <option selected value="">All Categories</option>
-                    <option value="Books">Books:</option>
-                    <option value="Article">Article:</option>
-                    <option value="Adult">Adult Readers:</option>
-                    <option value="Young">Young Readers:</option>
-=======
             <div class="input-field ">
                 <select id="category">
                     <option selected value="">All Categories</option>
@@ -17,7 +8,6 @@
                     <option value="2">Article:</option>
                     <option value="3">Adult Readers:</option>
                     <option value="4">Young Readers:</option>
->>>>>>> master
                 </select>
             </div>
         </div>
@@ -36,7 +26,7 @@
     </thead>
 
     <tbody>
-        {{#each libraries}}
+        {{#each Library}}
         <tr>
             <td>{{this.title}}</td>
             <td>{{this.author}}</td>
