@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
+
     "password": "Alwaysforward18",
+
     "database": "sibsdb",
 
     "host": "localhost",
