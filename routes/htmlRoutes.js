@@ -10,10 +10,11 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/community", function(req, res) {
-    db.Example.findAll({}).then(function(dbExample) {
+    // db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.User.findAll({}).then(function (data){
       console.log('community')
-      res.render("community", {libraries: dbExample 
-    });
+      res.render("community", {data});
+    })  
   });
 
   app.get("/library", function(req, res) {

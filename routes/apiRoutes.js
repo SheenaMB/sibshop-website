@@ -72,14 +72,19 @@ module.exports = function (app) {
   });
 
   // Create a new post 
-  app.post("api/community", function (req, res) {
-    db.Community.create(req.body).then(function (response) {
+  app.post("/api/community", function (req, res) {
+    console.log(req.body);
+    db.User.create({
+      title: req.body.title, // use as example
+      
+    })
+    .then(function (response) {
       res.json(response);
     })
   });
 
   // Update a new post 
-  app.put("api/community", function (req, res) {
+  app.put("/api/community", function (req, res) {
     db.Community.update(req.body,
       {
         where: {
@@ -92,7 +97,7 @@ module.exports = function (app) {
   });
 
   // Delete a post
-  app.delete("api/community/:id", function (req, res) {
+  app.delete("/api/community/:id", function (req, res) {
     db.Community.destroy({
       where: {
         id: req.params.id
@@ -132,7 +137,7 @@ module.exports = function (app) {
   });
 
   // Update an input 
-  app.put("api/community/signup", function (req, res) {
+  app.put("/api/community/signup", function (req, res) {
     db.SignUp.update(req.body,
       {
         where: {
@@ -145,7 +150,7 @@ module.exports = function (app) {
   });
 
   // Delete a input
-  app.delete("api/community/signup/:id", function (req, res) {
+  app.delete("/api/community/signup/:id", function (req, res) {
     db.SignUp.destroy({
       where: {
         id: req.params.id
