@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     name: DataTypes.STRING,
     email: DataTypes.TEXT,
-    location: DataTypes.STRING
+    state: DataTypes.STRING
   },
     { freezeTableName: true }
   );
