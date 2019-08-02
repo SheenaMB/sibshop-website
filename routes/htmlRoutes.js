@@ -8,10 +8,6 @@ module.exports = function (app) {
     res.render("index");
   })
 
-  app.get("/workshop", function(req, res){
-    res.render("workshop")
-  })
-
   // Load example page and pass in an example by id
   app.get("/community", function(req, res) {
     db.User.findAll({}).then(function (data){
