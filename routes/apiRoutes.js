@@ -58,8 +58,8 @@ module.exports = function (app) {
   //==================================
 
   // GET all community posts
-  app.get("api/community", function (req, res) {
-    db.Community.findAll({}).then(function (response) {
+  app.get("/api/community", function (req, res) {
+    db.User.findAll({}).then(function (response) {
       res.json(response);
     })
   });
@@ -69,7 +69,7 @@ module.exports = function (app) {
     console.log(req.body);
     db.User.create({
       name: req.body.name,
-      emailL: req.body.email,
+      email: req.body.email,
       state: req.body.state 
     })
     .then(function (response) {
