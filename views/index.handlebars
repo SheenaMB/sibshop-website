@@ -122,7 +122,40 @@
 ​
 <div class="container" id="social">
   <h1 class="title">Join/Support Us Today</h1>
-  <button class="btn waves-effect waves-light">Join</button>
+
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Sign Up</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+       <h1 id="heading" class="center-align red-text">Registration Form</h1>
+       <form class="col s12 #212121 grey darken-4">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input type="text" id="name" class="validate white-text">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" class="validate white-text" id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">location_city</i>
+                    <input type="text" class="validate white-text" id="state">
+                    <label for="state">State</label>
+                </div>
+                <button class="btn red z-depth-5 center-align">SignUp</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+
   <button class="btn red darken-3 white-text">Support our patreon</button>
   <!-- <a class="waves-effect waves-light btn">Join</a>
         <a class="waves-effect waves-light btn">Support our patreon</a> -->
