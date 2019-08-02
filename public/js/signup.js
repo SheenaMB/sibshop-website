@@ -19,14 +19,11 @@ $(document).ready(function () {
             type: "POST",
             data: data
         }).then(
-            // function () {
-            //     location.reload();
-            // });
-    // }
-    );
-    // console.log("\n========\n", handleFormSubmit)
+            function () {
+                location.reload();
+            });
+      });
 });
-// place event listener
 
-});
+
 
