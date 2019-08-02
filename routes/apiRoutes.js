@@ -1,24 +1,6 @@
 var db = require("../models");
 
-/*
-
-TODO:
-1. Delete item by id at "/api/library/:id" - 
-
-COMPLETE:
-1. Get all library info - defined & working (see htmlRoutes.js file) "/library"
-2. Get all library info based on category number - define and working "/api/library/:category"
-
-*/
-
 module.exports = function (app) {
-  // Get all library // TODO: Talk to team to verify what this route is for. B/c a route exists already in htmlRoutes.js that gets all library info and renders that info to the library.handlebars file...  If this route is not needed then delete.
-  app.get("/api/library", function (req, res) {
-    db.Library.findAll({})
-    .then(function (response) {
-      res.json(response);
-    });
-  });
 
   // Get all books by category (which is organized by number)
   // :category needs to be a number provided by the client side
@@ -26,19 +8,26 @@ module.exports = function (app) {
   // Example: If Article is selected: "/api/library/2"
   // Example: If Young is selected: "/api/library/4"
   // Example: If Adult is selected: "/api/library/3"
-  app.get("/api/library/:category", function (req, res) {
+  app.get("/library/:category", function (req, res) {
+    console.log(req.params.category);
     db.Library.findAll({
       where: {
         category: req.params.category // where column "category" in database contains the category number passed into the req.params.category
       }
-    }).then(function (results) {
-      res.json(results);
+    }).then(function (data) {
+      res.render("library", {data:data});
     });
   });
 
-
-
- 
+  // app.get("/library", function(req, res) {
+  //   console.log("library");
+  //   db.Library.findAll({})
+  //   .then(function(data){
+  //     // console.log("==========   ", data);
+  //     console.log(data);
+  //     res.render("library", {data});
+  //   })
+  // });
 
   // Create a new library
   app.post("/api/library", function (req, res) {
@@ -62,6 +51,10 @@ module.exports = function (app) {
     });
   });
 
+
+
+
+
   //==================================
 
   // GET all community posts
@@ -75,8 +68,9 @@ module.exports = function (app) {
   app.post("/api/community", function (req, res) {
     console.log(req.body);
     db.User.create({
-      title: req.body.title, // use as example
-      
+      name: req.body.name,
+      emailL: req.body.email,
+      state: req.body.state 
     })
     .then(function (response) {
       res.json(response);
@@ -149,7 +143,7 @@ module.exports = function (app) {
       })
   });
 
-  // Delete a input
+  // Delete an input
   app.delete("/api/community/signup/:id", function (req, res) {
     db.SignUp.destroy({
       where: {
@@ -181,7 +175,7 @@ module.exports = function (app) {
       where: {
         train: req.params.train
       }
-    }).then(function (dbTrain) {
+    }).then(function (response) {
       console.log("dbTrain", response);
       res.json(response);
     });
@@ -190,16 +184,5 @@ module.exports = function (app) {
 
 
 
-
-
-
-
 }
 
-// library --> get, input library, 
-// workshop --> training date, summary, category
-// trainign and actual workshop (children and adult)
-// community --> list of who lives where, (name email states disability conditions) 
-// (authenticared user) --> find all, findone, create, delete, update 
-
-// database : library, contact list, events 
