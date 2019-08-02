@@ -1,10 +1,10 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
 
-
   app.get("/", function(req, res){
+
     res.render("index");
   })
 
@@ -14,11 +14,13 @@ module.exports = function(app) {
       console.log('community')
       res.render("community", {data});
     })  
+
   });
 
-  app.get("/library", function(req, res) {
+  app.get("/library", function (req, res) {
     console.log("library");
     db.Library.findAll({})
+
     .then(function(data){
       // console.log("==========   ", data);
       console.log(data);
@@ -27,7 +29,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
