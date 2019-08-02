@@ -2,10 +2,9 @@
   "development": {
     "username": "root",
 
-    "password": "Alwaysforward18",
+    "password": "DB_PASSWORD",
 
     "database": "sibsdb",
-
     "host": "localhost",
     "dialect": "mysql"
   },
